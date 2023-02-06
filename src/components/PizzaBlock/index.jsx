@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+//import LoadingBlock from './LoadingBlock';
+
 function PizzaBlock({ name, imageUrl, price, types, sizes }) {
     const availableTypes = ['тонкое', 'традиционное'];
     const availableSizes = [26, 30, 40];
@@ -13,8 +15,8 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
         setActiveType(index);
     }
 
-    const onSelectSize = (index) => {
-        setActiveSize(index);
+    const onSelectSize = (size) => {
+        setActiveSize(size);
     }
 
     return (
@@ -41,10 +43,10 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
                 </ul>
                 <ul>
                     {availableSizes.map((size, index) => (
-                        <li key={size}
-                            onClick={() => onSelectSize(index)}
+                        <li key={index}
+                            onClick={() => onSelectSize(size)}
                             className={classNames({
-                                active: activeSize === index,
+                                active: activeSize === size,
                                 disabled: !sizes.includes(size),
                             })}
                         >
