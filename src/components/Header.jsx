@@ -7,7 +7,7 @@ import logoSvg from '../assets/img/pizza-logo.svg';
 import Button from './Button';
 
 function Header() {
-  const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+  const { totalCost, totalCount } = useSelector(({ cart }) => cart);
 
   return (
     <div className="header">
@@ -24,7 +24,7 @@ function Header() {
         <div className="header__cart">
           <Link to='/cart'>
             <Button className="button--cart">
-              <span>{totalPrice} ₴</span>
+              <span>{totalCost} ₴</span>
               <div className="button__delimiter"></div>
               <svg
                 width="18"
