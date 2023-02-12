@@ -37,6 +37,7 @@ function Cart() {
 
   const onClickOrder = () => {
     console.log('ВАШ ЗАКАЗ', items, 'Сумма заказа: ' + totalCost + ' грн.');
+    dispatch(clearCart());
   };
 
   return (
@@ -117,7 +118,7 @@ function Cart() {
       ) : (
         <div className="cart cart--empty">
           <h2>
-            Корзина пустая <i>😕</i>
+            Корзина пустая<i>😕</i>
           </h2>
           <p>
             Вероятней всего, вы не заказывали ещё пиццу.<br />
