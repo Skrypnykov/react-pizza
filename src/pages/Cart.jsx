@@ -83,6 +83,7 @@ function Cart() {
                   key={obj.id}
                   id={obj.id}
                   name={obj.name}
+                  imageUrl={obj.imageUrl}
                   type={obj.type}
                   size={obj.size}
                   totalCount={items[obj.id].items.length}
